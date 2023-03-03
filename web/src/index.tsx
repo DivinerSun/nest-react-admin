@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import AppRouter from "./routes";
+import zhCN from "antd/locale/zh_CN";
+import AppRouter from "./router";
 import "./index.scss";
 
 const root = ReactDOM.createRoot(
@@ -9,7 +10,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <BrowserRouter>
-    <ConfigProvider>
+    <ConfigProvider
+      locale={zhCN}
+      theme={{
+        token: {
+          colorPrimary: "#9E339F",
+        },
+      }}
+    >
       <AppRouter />
     </ConfigProvider>
   </BrowserRouter>

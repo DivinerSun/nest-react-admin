@@ -28,7 +28,8 @@ const LazyLoad = (Comp: React.LazyExoticComponent<any>): React.ReactNode => {
 
 // 动态路由
 export const lazyLoad = (moduleName: string) => {
-  return LazyLoad(lazy(() => import(`@/pages/${moduleName}`)));
+  const Module = lazy(() => import(`@/pages/${moduleName}`));
+  return LazyLoad(Module);
 };
 
 export default LazyLoad;

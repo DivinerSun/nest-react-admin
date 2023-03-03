@@ -1,12 +1,14 @@
-import { FC, Suspense } from "react";
+import { FC } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "../layout";
 import { lazyLoad } from "./LazyLoad";
 
 const AppRouter: FC = () => {
   return (
-    <Suspense>
+    <>
       <Routes>
-        <Route path="/" element={<Navigate to={"/home"} />}>
+        <Route path="/" element={<Navigate to={"/home"} />} />
+        <Route path="/" element={<Layout />}>
           <Route path="/home" element={lazyLoad("home")} />
           <Route path="/system/user" element={lazyLoad("user")} />
           <Route path="/system/role" element={lazyLoad("role")} />
@@ -14,7 +16,7 @@ const AppRouter: FC = () => {
         <Route path="/login" element={lazyLoad("login")} />
         <Route path="*" element={lazyLoad("error")} />
       </Routes>
-    </Suspense>
+    </>
   );
 };
 
