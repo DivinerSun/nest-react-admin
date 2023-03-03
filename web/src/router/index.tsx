@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 import Layout from "../layout";
+import AuthRouter from "./AuthRouter";
 import { lazyLoad } from "./LazyLoad";
 
 const routes: RouteObject[] = [
@@ -41,7 +42,7 @@ const routes: RouteObject[] = [
 ];
 
 const AppRouter: FC = () => {
-  return <>{useRoutes(routes)}</>;
+  return <AuthRouter>{useRoutes(routes) as JSX.Element}</AuthRouter>;
 };
 
 export default AppRouter;
