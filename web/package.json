@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "prod": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -17,6 +18,7 @@
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-plugin-dynamic-import": "^1.5.0"
   }
 }
