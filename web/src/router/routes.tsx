@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Navigate } from 'react-router-dom'
+import { HomeFilled, SettingFilled } from '@ant-design/icons'
 import Layout from '@/components/Layout'
 import LazyLoading from '@/components/LazyLoading'
 import { AppRouteItem } from '@/types/router'
@@ -30,14 +31,19 @@ export const authRoutes: AppRouteItem[] = [
   {
     path: '/home',
     title: '首页',
-    icon: null,
+    icon: <HomeFilled />,
     element: lazyRoute('home'),
   },
   {
     path: '/sys',
     title: '系统设置',
-    icon: null,
+    icon: <SettingFilled />,
     children: [
+      {
+        path: '/sys/dict',
+        title: '字典管理',
+        element: lazyRoute('sys/dict'),
+      },
       {
         path: '/sys/user',
         title: '用户管理',
