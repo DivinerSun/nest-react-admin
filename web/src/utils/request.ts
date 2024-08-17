@@ -34,7 +34,7 @@ export class HttpRequest {
   instance: AxiosInstance
   // 实例基础配置
   baseConfig: AxiosRequestConfig = {
-    baseURL: process.env.REACT_APP_HTTP_URL,
+    baseURL: import.meta.env.REACT_APP_HTTP_URL,
     timeout: 30000,
   }
 
